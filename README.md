@@ -1,14 +1,15 @@
 # components-check
 一枚小白，工作中的需求，做完以后留个记录，也希望能帮到有缘人。
 1.接口使用说明
-      使用目的：为了检查该项目中的数据库，redis缓存库，Rabbitmq消息组件，ActiveMq消息组件能不能正常使用，也可以拓展自己自定义的组件进行检查。
-      使用流程：
-         1.首先需要引入依赖：
-      <dependency>
-          <groupId>tdh.platform.common</groupId>
-          <artifactId>components-check</artifactId>
-          <version>1.0-SNAPSHOT</version>
-      </dependency>
+        使用目的：为了检查该项目中的数据库，redis缓存库，Rabbitmq消息组件，ActiveMq消息组件能不能正常使用，也可以拓展自己自定义的组件进行检查。
+        
+        使用流程：
+        1.首先需要引入依赖：
+            <dependency>
+                <groupId>tdh.platform.common</groupId>
+                <artifactId>components-check</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
 
       2.需要开启注解扫描并扫描到：com.tdh.common.component包及其子包。
       3.需要配置项目名（必须），可以配置其他开关属性。在springboot项目中可以在application.yml中配置
@@ -78,8 +79,10 @@
 
 
 2.接口描述和工作原理
+
       接口描述：调用url为/component/check,请求方式：get,不需要入参，返回值为ResponseEntity。组件状态有两种1代表正常，0代表不正常。组件全部正常
       code为200，否则返回code为500。每一项结构为：项目名_主机名_bean名称：状态值
+  
         返回值示例：
             {"code":"200",
             "utruck-app-webmobile_DESKTOP-6H4F0KJ_dataSource_local":"1", 
