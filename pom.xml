@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>tdh.platform.common</groupId>
+    <artifactId>components-check</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <!--<workspace.root>${project.basedir}</workspace.root>-->
+        <jedis.version>2.5.2</jedis.version>
+        <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+        <source.version>1.7</source.version>
+        <target.version>1.7</target.version>
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>1.2.8.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-web</artifactId>-->
+            <!--<version>2.0.1.RELEASE</version>-->
+        <!--</dependency>-->
+
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-jdbc</artifactId>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>3.4.4</version>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-amqp</artifactId>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-messaging</artifactId>
+            <version>4.1.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-rabbit</artifactId>
+            <version>1.4.6.RELEASE</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.rabbitmq/amqp-client -->
+
+
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>${jedis.version}</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
+
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <!--<scope>provided</scope>-->
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <!--<scope>provided</scope>-->
+        </dependency>
+
+        <!-- activemq 相关maven依赖 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jms</artifactId>
+            <version>4.1.9.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-client</artifactId>
+            <version>5.12.3</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>4.1.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>4.1.9.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>4.1.9.RELEASE</version>
+        </dependency>
+
+
+    </dependencies>
+
+    <build>
+        <!--<filters>-->
+            <!--<filter>env-config-dev.properties</filter>-->
+        <!--</filters>-->
+
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+                <!--<version>1.2.7.RELEASE</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<goals>-->
+                            <!--<goal>repackage</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
+
+    </build>
+
+
+    <!--<profiles>-->
+    <!--&lt;!&ndash; 开发环境，默认激活 &ndash;&gt;-->
+    <!--<profile>-->
+        <!--<id>dev</id>-->
+        <!--<properties>-->
+            <!--<env>dev</env>-->
+        <!--</properties>-->
+        <!--<activation>-->
+            <!--<activeByDefault>true</activeByDefault>-->
+            <!--&lt;!&ndash;默认启用的是dev环境配置 &ndash;&gt;-->
+        <!--</activation>-->
+    <!--</profile>-->
+    <!--</profiles>-->
+
+</project>
